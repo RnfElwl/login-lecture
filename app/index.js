@@ -1,24 +1,22 @@
 "use strict";
-
+// 모듈
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 
+//라우팅
+const home = require("./src/routes/home");
 //앱세팅
-
 app.set("views", "./src/views");
 app.set("view engine", "ejs");
-app.use(express.static(`${__dirname}/src/public`))
+app.use(express.static(`${__dirname}/src/public`));
 
+app.use(bodyParser.json());
 
-const home = require("./src/routes/home");
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use("/", home);
-const login = require("./src/routes/home");
-app.use('/login', login)
-
-
 module.exports = app;
-
-
 
 // express 없이 작성한 서버 연결 코드
 // const http = require("http");
@@ -33,8 +31,6 @@ module.exports = app;
 //         res.end("this is login screen");
 //     }
 // });
-
-
 
 // app.listen(3001, () => {
 //     console.log("http listen server")

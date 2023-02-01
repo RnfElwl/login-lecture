@@ -1,7 +1,7 @@
 const fs = require("fs").promises;
 
 class UserStorage {
-  static _getUserInfo(data, id) {
+  static #getUserInfo(data, id) {
     const users = JSON.parse(data);
     const idx = users.id.indexOf(id);
     const usersKeys = Object.keys(users); // ["id", "psword", "name"]
@@ -27,7 +27,7 @@ class UserStorage {
     return fs
       .readFile("./src/databases/users.json")
       .then((data) => {
-        return this._getUserInfo(data, id);
+        return this.#getUserInfo(data, id);
       })
       .catch(console.error);
   }

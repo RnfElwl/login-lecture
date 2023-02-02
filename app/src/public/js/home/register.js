@@ -2,7 +2,7 @@ const id = document.querySelector("#id");
 const name = document.querySelector("#name");
 const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirm-password");
-const registerBtn = document.querySelector("button");
+const registerBtn = document.querySelector("#button");
 
 registerBtn.addEventListener("click", register);
 
@@ -18,7 +18,6 @@ function register() {
     name: name.value,
     psword: password.value,
   };
-  console.log(req);
   fetch("/register", {
     method: "POST",
     headers: {

@@ -26,12 +26,13 @@
   box-sizing: border-box;
   font-size: 14px;
 }
-.form button {
+.form #button {
+  margin: 0 auto;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
   background: #4caf50;
-  width: 100%;
+  width: 80%;
   border: 0;
   padding: 15px;
   color: #ffffff;

@@ -1,6 +1,7 @@
 const app = require("../index");
+const logger = require("../src/config/logger");
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, function () {
-  console.log("서버 가동");
+  logger.info(`${PORT} 포트에서 서버가 가동되었습니다.`);
 });
